@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  min-height: 100vh;
+  color: white;
+  background-color: #282c2e;
+}
+
+.text-selection ul li {
+  list-style: none;
+  padding:5px 10px;
+  margin: 5px 0;
+  border: 1px solid white;
+}
