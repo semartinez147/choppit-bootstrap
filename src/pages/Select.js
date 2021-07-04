@@ -1,8 +1,17 @@
 import {ChoppitNav} from "../components/ChoppitNav";
-import React from "react";
-import {Col, Container, Form, FormGroup, Row} from "react-bootstrap";
+import React, {useState} from "react";
+import {Button, Col, Container, Form, Row, ToggleButton, ToggleButtonGroup} from "react-bootstrap";
+import PickerModal from "../components/PickerModal";
 
 function Select() {
+
+    const [radioValue, setRadioValue] = useState(true);
+
+    const changeSelectMethod = (val) => {
+        setRadioValue(val)
+        // change selection method
+    }
+
     return (
         <>
             <ChoppitNav/>
@@ -12,24 +21,41 @@ function Select() {
                     Click an item to mark it as an ingredient or recipe step.<br/>
                     This helps Choppit understand what parts of the text you want to keep.
                 </Container>
-                <Container className="text-selection border border-2 border-light rounded" style={{minHeight: "20vh"}}>
+                <Container>
+                    <Row className='justify-content-end'>
+                        <ToggleButtonGroup type="radio" name='selectionMethod' value={radioValue} onChange={changeSelectMethod}>
+                            <Button variant='outline-light' onClick={() => {
+                                setRadioValue(!radioValue)
+                            }}>Text Selection Mode:</Button>
+                            <ToggleButton variant='outline-primary' value={true}>Narrow</ToggleButton>
+                            <ToggleButton variant='outline-success' value={false}>Broad</ToggleButton>
+                        </ToggleButtonGroup></Row>
+                </Container>
+                <Container className="text-selection border border-2 border-light rounded my-2" style={{minHeight: "20vh"}}>
                     <ul>
-                        <li>This is where</li>
-                        <li>the text will</li>
-                        <li>go</li>
-                        <li>when there is text to go</li>
+                        <PickerModal text='This is where'/>
+                        <PickerModal text='the text will'/>
+                        <li>be</li>
+                        <li>when there is text to be</li>
                     </ul>
                 </Container>
                 <Container>
                     <Form>
                         <Row>
-                            <Col>
+                            <Col className='mt-2'>
                                 <Form.Group>
-                                    <Form.Control type="text"/>
+                                    <Form.Control type="text" readOnly/>
                                     <Form.Label>Ingredient Text</Form.Label>
                                 </Form.Group>
                             </Col>
+                            <Col className='mt-2'>
+                                <Form.Group>
+                                    <Form.Control type="text" readOnly/>
+                                    <Form.Label>Instruction Text</Form.Label>
+                                </Form.Group>
+                            </Col>
                         </Row>
+                        <Row><Col><Button>Do Go More</Button></Col></Row>
                     </Form>
                 </Container>
             </div>
