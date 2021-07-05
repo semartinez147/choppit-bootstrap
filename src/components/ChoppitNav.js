@@ -21,7 +21,8 @@ export const ChoppitNav = () => {
                 <Nav className="mr-auto">
                     <Nav.Link href="/home">Home</Nav.Link>
                     <Nav.Link href="/select">Selection</Nav.Link>
-                    <Nav.Link href="#edit" disabled>Edit</Nav.Link>
+                    <Nav.Link href="/recipe">Recipe</Nav.Link>
+                    <Nav.Link href="/edit">Edit</Nav.Link>
                     <Nav.Link href="#cookbook" disabled>Cookbook</Nav.Link>
                     <Nav.Link href="#recipe" disabled>Recipe</Nav.Link>
                 </Nav>

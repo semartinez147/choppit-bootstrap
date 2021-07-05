@@ -17,10 +17,10 @@ function PickerModal(props) {
         </li>
 
         <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>Select Text</Modal.Title>
+            <Modal.Header className='bg-dark text-white'  closeButton>
+                <Modal.Title className='bg-dark text-white'>Select Text</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body className='bg-dark text-white'>
                 <PickerForm/>
             </Modal.Body>
         </Modal>

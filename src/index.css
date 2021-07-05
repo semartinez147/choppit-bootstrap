@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #282c2e;
 }
 
 code {
@@ -15,7 +16,6 @@ code {
 .App {
   min-height: 100vh;
   color: white;
-  background-color: #282c2e;
 }
 
 .text-selection ul li {
@@ -23,4 +23,9 @@ code {
   padding:5px 10px;
   margin: 5px 0;
   border: 1px solid white ;
+}
+
+#rec-ingredients {
+  border-right: 2px solid white;
+
 }

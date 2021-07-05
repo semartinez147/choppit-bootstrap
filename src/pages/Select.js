@@ -55,7 +55,7 @@ function Select() {
                                 </Form.Group>
                             </Col>
                         </Row>
-                        <Row><Col><Button>Do Go More</Button></Col></Row>
+                        <Row><Col><Button block>Do Go More</Button></Col></Row>
                     </Form>
                 </Container>
             </div>
